@@ -7,13 +7,19 @@ Source Code: http://rpubs.com/ywchiu/25570
 
 
 $ yum install libxml2-devel
+
 $ sudo yum install curl-devel
+
 $ sudo R
 
 > Install.packages(c("Rcurl", "httr"),  dependencies = TRUE
+
 > Install.packages("devtools", dependencies = TRUE)
+
 > library(devtools)
+
 > install_github("pryr", "hadley")
+
 > Install.packages(c("R.methodsS3", "hydroPSO"),  dependencies = TRUE)
 
 
