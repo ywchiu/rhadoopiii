@@ -106,7 +106,7 @@ $ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 
 > pkg-config --cflags thrift
 
-> sudo cp /usr/local/lib/libthrift-0.8.0.so /usr/lib/
+> sudo cp /usr/local/lib/libthrift-0.8.0.so /usr/lib64/ 
 > 
 > 
 > wget --no-check-certificate https://github.com/RevolutionAnalytics/rhbase/blob/master/build/rhbase_1.2.1.tar.gz?raw=true
