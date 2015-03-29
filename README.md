@@ -71,10 +71,11 @@ $ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 ==============================
 >  hbase shell
 
-> 
+> create 't1','f1'
+
 > ERROR: Can't get master address from ZooKeeper; znode data == null
 > 
-
+### restart habase service
 > sudo service hbase-master restart
 
 > sudo env JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera /usr/lib/hbase/bin/hbase-daemon.sh start regionserver
@@ -82,6 +83,7 @@ $ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 > sudo service zookeeper-server restart
 > 
 > 
+### install thrift 
 > sudo yum install automake libtool flex bison pkgconfig gcc-c++ boost-devel libevent-devel zlib-devel python-devel ruby-devel
 
 > sudo yum install openssl openssl-devel
@@ -96,10 +98,10 @@ $ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 
 > make
 
-> make install
+> sudo make install
 > 
 > 
-
+### config thrift
 > sudo updatedb
 
 > export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
@@ -109,6 +111,7 @@ $ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 > sudo cp /usr/local/lib/libthrift-0.8.0.so /usr/lib64/ 
 > 
 > 
+### install rhbase
 > wget --no-check-certificate https://github.com/RevolutionAnalytics/rhbase/blob/master/build/rhbase_1.2.1.tar.gz?raw=true
 
 > mv rhbase_1.2.1.tar.gz\?raw\=true rhbase_1.2.1.tar.gz
