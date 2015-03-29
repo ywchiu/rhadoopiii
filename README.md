@@ -78,7 +78,7 @@ $ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 ### restart habase service
 > sudo service hbase-master restart
 
-> sudo env JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera /usr/lib/hbase/bin/hbase-daemon.sh start regionserver
+> sudo env JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera /usr/lib/hbase/bin/hbase-daemon.sh restart regionserver
 
 > sudo service zookeeper-server restart
 > 
