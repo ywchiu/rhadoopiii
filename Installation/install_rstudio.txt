@@ -1,0 +1,3 @@
+wget http://download1.rstudio.org/rstudio-0.99.441-x86_64.rpm
+
+sudo yum install --nogpgcheck rstudio-0.99.441-x86_64.rpm

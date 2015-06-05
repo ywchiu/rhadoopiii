@@ -23,7 +23,7 @@ $ sudo R
 > install.packages(c("R.methodsS3", "hydroPSO"),  dependencies = TRUE)
 
 
-$ wget -no-check-certificate  https://raw.github.com/RevolutionAnalytics/plyrmr/master/build/plyrmr_0.5.0.tar.gz
+$ wget --no-check-certificate  https://raw.github.com/RevolutionAnalytics/plyrmr/master/build/plyrmr_0.5.0.tar.gz
 
 $ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 
