@@ -1,5 +1,5 @@
 //Fetch ec.tar.gz website 
-wget https://github.com/ywchiu/hadoopscience2/raw/master/Recommend/ec.tar.gz
+wget https://github.com/ywchiu/rhadoopiii/raw/master/Recommend/ec.tar.gz
 
 //Untar ec.tar.gz
 tar -zxvf ec.tar.gz
@@ -22,7 +22,7 @@ python manage.py runserver 127.0.0.1:11111
 tail -f /tmp/postlog.txt
 
 //Fetch agent.properties
-wget https://github.com/ywchiu/hadoopscience2/raw/master/Recommend/agent.properties
+wget https://github.com/ywchiu/rhadoopiii/raw/master/Recommend/agent.properties
 
 //Copy Flume
 sudo cp *.properties /etc/hadoop/conf
@@ -34,16 +34,16 @@ flume-ng agent --conf /etc/hadoop/conf --conf-file /etc/hadoop/conf/agent.proper
 hadoop fs -cat ecout/*
 
 //Fetch DataETL.pig
-wget https://github.com/ywchiu/hadoopscience2/raw/master/Recommend/DataETL.pig
+wget https://github.com/ywchiu/rhadoopiii/raw/master/Recommend/DataETL.pig
 pig DataETL.pig
 
 //Add additional dataset
-wget https://github.com/ywchiu/hadoopscience2/raw/master/Recommend/small.csv
+wget https://github.com/ywchiu/rhadoopiii/raw/master/Recommend/small.csv
 hadoop fs -put small.csv  ecprocess
 
 //Fetch recommendation script
-wget https://github.com/ywchiu/hadoopscience2/raw/master/Recommend/small-recommend.sh
-sh small-recommend.sh
+wget https://github.com/ywchiu/rhadoopiii/raw/master/ML/Tutorial3/recommender_hadoop.r 
+Rscript recommender_hadoop.r /user/cloudera/ecprocess/small.csv /home/cloudera/small_recommend
 
 //View recommend result
 hadoop fs -cat small_recommend/*
@@ -52,13 +52,8 @@ hadoop fs -cat small_recommend/*
 hbase shell
 > create 'mydata', 'mycf'
 
-sudo service zookeeper-server restart
-sudo env JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera /usr/lib/hbase/bin/hbase-daemon.sh restart regionserver
-sudo service hbase-master restart
-http://localhost:60010
-
 //Fetch Hbase Insert command
-wget https://github.com/ywchiu/hadoopscience2/raw/master/Recommend/transfer.pig
+wget https://github.com/ywchiu/rhadoopiii/raw/master/Recommend/transfer.pig
 pig transfer.pig
 
 
