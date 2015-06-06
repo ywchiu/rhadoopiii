@@ -20,6 +20,13 @@ sudo pip install requests
 
 - https://youtu.be/NPbjtdksHOE
 
+### Recommendation System
+
+- https://www.youtube.com/watch?v=RoRixPm4XyQ
+
+- https://youtu.be/guIYYb8YSHc
+
+- https://www.youtube.com/watch?v=4PByu9Fv3NE
 
 # 2330 Analysis
 ==========================
