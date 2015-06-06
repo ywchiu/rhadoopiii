@@ -6,6 +6,14 @@ Slideshare: https://www.slideshare.net/secret/gDf3JYJRPWzkf5
 Source Code: http://rpubs.com/ywchiu/25570
 
 
+### [實際應用] 使用Hadoop 分析 Facebook 打卡資訊
+
+https://www.youtube.com/watch?v=FQr2nVvkLzc
+
+sudo yum install python-pip
+
+sudo pip install requests
+
 ### 安裝步驟
 
 - https://youtu.be/NPbjtdksHOE
