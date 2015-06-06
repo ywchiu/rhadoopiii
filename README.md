@@ -20,10 +20,6 @@ sudo pip install requests
 
 - https://youtu.be/NPbjtdksHOE
 
-- https://youtu.be/5-oPDfy1LxY
-
-- https://youtu.be/dUeLbl1dcXs
-
 
 # 2330 Analysis
 ==========================
