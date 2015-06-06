@@ -1,15 +1,24 @@
 Sys.setenv(HADOOP_CMD="/usr/bin/hadoop")
-Sys.setenv(HADOOP_STREAMING="/usr/lib/hadoop-mapreduce/hadoop-streaming-2.5.0-cdh5.3.0.jar")
-
+Sys.setenv(HADOOP_STREAMING="/usr/lib/hadoop-mapreduce/hadoop-streaming.jar")
+args<-commandArgs(TRUE)
+library(stringr)
 library (rmr2)
-train <-read.csv (file = "small.csv", header = FALSE)
+library (rhdfs)
+hdfs.init()
+rmr.options(backend="local")
+
+hdfs.content = hdfs.read.text.file(args[1])
+train = as.data.frame(str_split_fixed(as.data.frame(hdfs.content)[,1], ",", 3))
 names (train) <-c ("user", "item", "pref")
+train$user = as.integer(train$user)
+train$item = as.integer(train$item)
+train$pref = as.numeric(train$pref)
 
 train.hdfs = to.dfs (keyval (train$user, train))
-from.dfs (train.hdfs)
+#from.dfs (train.hdfs)
 
 train.mr<-mapreduce(
-  train.hdfs, 
+  input=train.hdfs, 
   map = function(k, v) {
     keyval(k,v$item)
   }
@@ -19,7 +28,7 @@ train.mr<-mapreduce(
   }
 )
 library(plyr)
-from.dfs(train.mr)
+#from.dfs(train.mr)
 step2.mr<-mapreduce(
   train.mr,
   map = function(k, v) {
@@ -31,19 +40,18 @@ step2.mr<-mapreduce(
     keyval(key,val)
   }
 )
-from.dfs(step2.mr)
+#from.dfs(step2.mr)
 
 train2.mr<-mapreduce(
   train.hdfs, 
   map = function(k, v) {
-    #df<-v[which(v$user==3),]
     df<-v
     key<-df$item
     val<-data.frame(item=df$item,user=df$user,pref=df$pref)
     keyval(key,val)
   }
 )
-from.dfs(train2.mr)
+#from.dfs(train2.mr)
 
 eq.hdfs<-equijoin(
   left.input=step2.mr, 
@@ -56,7 +64,7 @@ eq.hdfs<-equijoin(
   },
   outer = c("left")
 )
-from.dfs(eq.hdfs)
+#from.dfs(eq.hdfs)
 
 
 cal.mr<-mapreduce(
@@ -72,10 +80,12 @@ cal.mr<-mapreduce(
     keyval(val$k.l,val)
   }
 )
-from.dfs(cal.mr)
-
+#from.dfs(cal.mr)
+csv.format = make.output.format("csv", quote=FALSE, sep = "\t")
 result.mr<-mapreduce(
   input=cal.mr,
+  output=args[2],
+  output.format = csv.format,
   map=function(k,v){
     keyval(v$user.r,v)
   }
@@ -83,9 +93,9 @@ result.mr<-mapreduce(
     val<-ddply(v,.(user.r,v.l),summarize,v=sum(v))
     val2<-val[order(val$v,decreasing=TRUE),]
     names(val2)<-c("user","item","pref")
-    keyval(val2$user,val2)
+     a = paste('[', paste(100+val2$item, collapse=',' ), ']', collpase='')
+    keyval(unique(val2$user),a)
   }
 )
-head(from.dfs(result.mr)$val)
 
-
+#from.dfs(result.mr)
