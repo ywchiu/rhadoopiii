@@ -5,6 +5,8 @@ Slideshare: https://www.slideshare.net/secret/gDf3JYJRPWzkf5
 
 Source Code: http://rpubs.com/ywchiu/25570
 
+Plyrmr Code: http://rpubs.com/ywchiu/plyrmr
+
 
 ### [實際應用] 使用Hadoop 分析 Facebook 打卡資訊
 

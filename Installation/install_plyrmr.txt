@@ -1,5 +1,6 @@
 $ sudo yum install libxml2-devel
 $ sudo yum install curl-devel
+$ sudo yum install openssl-devel
 $ sudo R
 
 > install.packages(c("Rcurl", "httr"),  dependencies = TRUE)
@@ -7,8 +8,8 @@ $ sudo R
 > library(devtools)
 > install_github("pryr", "hadley")
 > install.packages(c("R.methodsS3", "hydroPSO"),  dependencies = TRUE)
-> install.packages("dplyr", dependencies = TRUE)
-> install.packages("rjson", dependencies = TRUE)
+> install.packages(c("dplyr","rjson"), dependencies = TRUE)
+> q()
  
 $ wget https://github.com/RevolutionAnalytics/plyrmr/releases/download/0.6.0/plyrmr_0.6.0.tar.gz
 $ sudo R CMD INSTALL plyrmr_0.6.0.tar.gz
