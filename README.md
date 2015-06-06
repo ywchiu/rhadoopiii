@@ -8,38 +8,11 @@ Source Code: http://rpubs.com/ywchiu/25570
 
 ### 安裝步驟
 
-https://youtu.be/NPbjtdksHOE
+- https://youtu.be/NPbjtdksHOE
 
 - https://youtu.be/5-oPDfy1LxY
 
 - https://youtu.be/dUeLbl1dcXs
-
-
-$ sudo yum install libxml2-devel
-
-$ sudo yum install curl-devel
-
-$ sudo R
-
-> install.packages(c("Rcurl", "httr"),  dependencies = TRUE)
-
-> install.packages("devtools", dependencies = TRUE)
-
-> library(devtools)
-
-> install_github("pryr", "hadley")
-
-> install.packages(c("R.methodsS3", "hydroPSO"),  dependencies = TRUE)
-
-> install.packages("dplyr", dependencies = TRUE)
-
-
-> install.packages("rjson", dependencies = TRUE)
-
-
-$ wget --no-check-certificate  https://raw.github.com/RevolutionAnalytics/plyrmr/master/build/plyrmr_0.5.0.tar.gz
-
-$ sudo R CMD INSTALL plyrmr_0.5.0.tar.gz
 
 
 # 2330 Analysis
