@@ -6,6 +6,15 @@ Slideshare: https://www.slideshare.net/secret/gDf3JYJRPWzkf5
 Source Code: http://rpubs.com/ywchiu/25570
 
 
+### 安裝步驟
+
+https://youtu.be/NPbjtdksHOE
+
+- https://youtu.be/5-oPDfy1LxY
+
+- https://youtu.be/dUeLbl1dcXs
+
+
 $ sudo yum install libxml2-devel
 
 $ sudo yum install curl-devel
