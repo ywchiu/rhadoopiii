@@ -8,6 +8,14 @@ Source Code: http://rpubs.com/ywchiu/25570
 Plyrmr Code: http://rpubs.com/ywchiu/plyrmr
 
 
+### vm download
+- https://downloads.cloudera.com/demo_vm/vmware/cloudera-quickstart-vm-5.2.0-0-vmware.7z
+
+
+### Prvent from set environment
+- vi ~/.Rprofile
+
+
 ### [實際應用] 使用Hadoop 分析 Facebook 打卡資訊
 
 https://www.youtube.com/watch?v=FQr2nVvkLzc
