@@ -9,6 +9,7 @@ $ sudo R
 > install_github("pryr", "hadley")
 > install.packages(c("R.methodsS3", "hydroPSO"),  dependencies = TRUE)
 > install.packages(c("dplyr","rjson"), dependencies = TRUE)
+> install.packages(c("Hmisc"), dependencies = TRUE)
 > q()
  
 $ wget https://github.com/RevolutionAnalytics/plyrmr/releases/download/0.6.0/plyrmr_0.6.0.tar.gz
