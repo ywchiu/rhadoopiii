@@ -5,7 +5,7 @@ library(stringr)
 library (rmr2)
 library (rhdfs)
 hdfs.init()
-rmr.options(backend="local")
+rmr.options(backend="hadoop")
 
 hdfs.content = hdfs.read.text.file(args[1])
 train = as.data.frame(str_split_fixed(as.data.frame(hdfs.content)[,1], ",", 3))

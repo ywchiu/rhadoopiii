@@ -43,7 +43,7 @@ hadoop fs -put small.csv  ecprocess
 
 //Fetch recommendation script
 wget https://github.com/ywchiu/rhadoopiii/raw/master/ML/Tutorial3/recommender_hadoop.r 
-Rscript recommender_hadoop.r /user/cloudera/ecprocess/small.csv /home/cloudera/small_recommend
+Rscript recommender_hadoop.r /user/cloudera/ecprocess/small.csv /user/cloudera/small_recommend
 
 //View recommend result
 hadoop fs -cat small_recommend/*
