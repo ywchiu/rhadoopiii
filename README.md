@@ -8,6 +8,11 @@ Source Code: http://rpubs.com/ywchiu/25570
 Plyrmr Code: http://rpubs.com/ywchiu/plyrmr
 
 
+### rstudio rpm
+- wget http://download1.rstudio.org/rstudio-0.98.1103-x86_64.rpm
+- sudo rpm -ivh rstudio-0.98.1103-x86_64.rpm
+
+
 ### vm download
 - https://downloads.cloudera.com/demo_vm/vmware/cloudera-quickstart-vm-5.2.0-0-vmware.7z
 
