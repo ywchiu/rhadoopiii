@@ -4,8 +4,6 @@ $ sudo yum install openssl-devel
 $ sudo R
 
 > install.packages(c("Rcurl", "httr"),  dependencies = TRUE)
-> install.packages("devtools", dependencies = TRUE)
-> install.packages("pryr", dependencies = TRUE)
 > install.packages(c("R.methodsS3", "hydroPSO"),  dependencies = TRUE)
 > install.packages(c("dplyr","rjson"), dependencies = TRUE)
 > install.packages(c("Hmisc"), dependencies = TRUE)
