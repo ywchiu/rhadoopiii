@@ -7,6 +7,8 @@ Source Code: http://rpubs.com/ywchiu/25570
 
 Plyrmr Code: http://rpubs.com/ywchiu/plyrmr
 
+## Update R-core
+- sudo yum install R-core
 
 ### rstudio rpm
 - wget http://download1.rstudio.org/rstudio-0.98.1103-x86_64.rpm
